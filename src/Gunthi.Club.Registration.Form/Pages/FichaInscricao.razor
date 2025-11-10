@@ -2,135 +2,178 @@
 @using System.Globalization
 @inject IJSRuntime JSRuntime
 
-<div align="center">
-    <img src="logo_CORK_cores.jpg" width="100px" heigth="100px"/>
-    <p>NIPC - 513 156 500</p>
-    <p>Fundado a 10 julho 2014</p>
-</div>
-
-<h2 class="text-center mb-4">FICHA DE INSCRIÇÃO – ÉPOCA DESPORTIVA 2025/26</h2>
-<p class="text-center small text-muted">01 setembro 2025 – 31 agosto 2026</p>
-
-<div class="form-container">
-    <section>
-        <h4>IDENTIFICAÇÃO DO ATLETA</h4>
-        <div class="form-grid">
-            <label>Nome</label><input type="text" class="form-control" />
-
-            <label>Data de Nascimento</label><input type="date" class="form-control" />
-
-            <label>N.º de Identificação Fiscal</label><input type="text" class="form-control" />
-
-            <label>BI / Cartão de Cidadão n.º</label><input type="text" class="form-control" />
-
-            <label>Validade</label><input type="date" class="form-control" />
-
-            <label>Morada / Rua</label><input type="text" class="form-control" />
-
-            <label>Localidade</label><input type="text" class="form-control" />
-
-            <label>Código Postal</label><input type="text" class="form-control" />
-
-            <label>E-mail</label><input type="email" class="form-control" />
-
-            <label>Telemóvel</label><input type="tel" class="form-control" />
+<div class="pdf-page">
+    <header class="page-header text-center">
+        <div align="center">
+            <img src="logo_CORK_cores.jpg" width="100px" heigth="100px" />
+            <p>NIPC - 513156500</p>
+            <p>Fundado a 10 julho2014</p>
         </div>
-    </section>
 
-    <section>
-        <h4>IDENTIFICAÇÃO DO(S) ENCARREGADO(S) DE EDUCAÇÃO</h4>
-        <fieldset>
-            <legend>Encarregado de Educação (1)</legend>
+        <h2 class="text-center mb-4">FICHA DE INSCRIÇÃO – ÉPOCA DESPORTIVA2025/26</h2>
+        <p class="text-center small text-muted">01 setembro 2025 – 31 agosto 2026</p>
+    </header>
+
+    <main class="form-container">
+        <section>
+            <h4>IDENTIFICAÇÃO DO ATLETA</h4>
             <div class="form-grid">
-                <label>Encarregado de Educação</label><input type="text" class="form-control" />
-                <label>Grau de Parentesco</label><input type="text" class="form-control" />
+                <label>Nome</label><input type="text" class="form-control" />
+
+                <label>Data de Nascimento</label><input type="date" class="form-control" />
+
+                <label>N.º de Identificação Fiscal</label><input type="text" class="form-control" />
+
+                <label>BI / Cartão de Cidadão n.º</label><input type="text" class="form-control" />
+
+                <label>Validade</label><input type="date" class="form-control" />
+
+                <label>Morada / Rua</label><input type="text" class="form-control" />
+
+                <label>Localidade</label><input type="text" class="form-control" />
+
+                <label>Código Postal</label><input type="text" class="form-control" />
+
                 <label>E-mail</label><input type="email" class="form-control" />
+
                 <label>Telemóvel</label><input type="tel" class="form-control" />
             </div>
-        </fieldset>
-        <br />
-        <fieldset>
-            <legend>Encarregado de Educação (2)</legend>
-            <div class="form-grid mt-3">
-                <label>Encarregado de Educação</label><input type="text" class="form-control" />
-                <label>Grau de Parentesco</label><input type="text" class="form-control" />
-                <label>E-mail</label><input type="email" class="form-control" />
-                <label>Telemóvel</label><input type="tel" class="form-control" />
+        </section>
+
+        <section>
+            <h4>IDENTIFICAÇÃO DO(S) ENCARREGADO(S) DE EDUCAÇÃO</h4>
+            <fieldset>
+                <legend>Encarregado de Educação (1)</legend>
+                <div class="form-grid">
+                    <label>Encarregado de Educação</label><input type="text" class="form-control" />
+                    <label>Grau de Parentesco</label><input type="text" class="form-control" />
+                    <label>E-mail</label><input type="email" class="form-control" />
+                    <label>Telemóvel</label><input type="tel" class="form-control" />
+                </div>
+            </fieldset>
+            <br />
+            <fieldset>
+                <legend>Encarregado de Educação (2)</legend>
+                <div class="form-grid mt-3">
+                    <label>Encarregado de Educação</label><input type="text" class="form-control" />
+                    <label>Grau de Parentesco</label><input type="text" class="form-control" />
+                    <label>E-mail</label><input type="email" class="form-control" />
+                    <label>Telemóvel</label><input type="tel" class="form-control" />
+                </div>
+            </fieldset>
+        </section>
+
+        <section>
+            <h4>AUTORIZAÇÕES</h4>
+            <p>(Colocar uma cruz “x” no campo devido e assinar)</p>
+
+            <div class="checkbox-section">
+                <h5>1) Transporte para provas/treinos e outras atividades</h5>
+                <label>
+                    <input type="checkbox" /> Autorizo que o meu educando seja transportado para as provas desportivas
+                    nos transportes disponibilizados pelo Clube.
+                </label>
+                <label>
+                    <input type="checkbox" /> Não autorizo que o meu educando seja transportado para as provas
+                    desportivas nos transportes disponibilizados pelo Clube.
+                </label>
+                <div class="assinatura">Assinatura: </div>
             </div>
-        </fieldset>
-    </section>
 
-    <section>
-        <h4>AUTORIZAÇÕES</h4>
-        <p>(Colocar uma cruz “x” no campo devido e assinar)</p>
+            <div class="checkbox-section">
+                <h5>
+                    2) Divulgação de imagem (Facebook, Instagram e outras redes sociais. Outdoors, panfletos de
+                    divulgação)
+                </h5>
+                <label>
+                    <input type="checkbox" /> Autorizo que a imagem do meu educando seja divulgada nas redes sociais,
+                    comunicação e imagem do Clube.
+                </label>
+                <label>
+                    <input type="checkbox" /> Não autorizo que a imagem do meu educando seja divulgada nas redes
+                    sociais, comunicação e imagem do Clube.
+                </label>
+                <div class="assinatura">Assinatura: </div>
+            </div>
+        </section>
 
-        <div class="checkbox-section">
-            <h5>1) Transporte para provas/treinos e outras atividades</h5>
-            <label><input type="checkbox" /> Autorizo que o meu educando seja transportado para as provas desportivas nos transportes disponibilizados pelo Clube.</label>
-            <label><input type="checkbox" /> Não autorizo que o meu educando seja transportado para as provas desportivas nos transportes disponibilizados pelo Clube.</label>
-            <div class="assinatura">Assinatura: </div>
-        </div>
+        <section>
+            <h4>INFORMAÇÃO DE VALORES</h4>
+            <ul>
+                <li>Taxa de Seguro – <strong>13€</strong>*</li>
+                <li>Taxa de Inscrição – <strong>13€</strong>*</li>
+                <li>
+                    Taxa de Filiação (para atletas filiados na FPA):
+                    <ul>
+                        <li>Nascidos em 2008 e posteriores – <strong>5€</strong>*</li>
+                        <li>Nascidos em 2007 e anteriores – <strong>12€</strong>*</li>
+                    </ul>
+                </li>
+                <li>
+                    Mensalidades – <strong>6,50€/mês/1 filho praticanete</strong>; <strong>
+                        6,00€/mês/2 ou mais
+                        praticantes
+                    </strong>**
+                </li>
+                <li>Quota de Sócio – <strong>12€/ano</strong>*</li>
+                <li>
+                    Exame médico desportivo – comparticipação de4€ pelo Clube sendo o restante a cargo dos atletas
+                </li>
+            </ul>
 
-        <div class="checkbox-section">
-            <h5>2) Divulgação de imagem (Facebook, Instagram e outras redes sociais. Outdoors, panfletos de divulgação)</h5>
-            <label><input type="checkbox" /> Autorizo que a imagem do meu educando seja divulgada nas redes sociais, comunicação e imagem do Clube.</label>
-            <label><input type="checkbox" /> Não autorizo que a imagem do meu educando seja divulgada nas redes sociais, comunicação e imagem do Clube.</label>
-            <div class="assinatura">Assinatura: </div>
-        </div>
-    </section>
+            <p align="center">Não é permitida a presença em treinos e competições sem exame médico válido.</p>
 
-    <section>
-        <h4>INFORMAÇÃO DE VALORES</h4>
-        <ul>
-            <li>Taxa de Seguro – <strong>13€</strong>*</li>
-            <li>Taxa de Inscrição – <strong>13€</strong>*</li>
-            <li>
-                Taxa de Filiação (para atletas filiados na FPA):
-                <ul>
-                    <li>Nascidos em 2008 e posteriores – <strong>5€</strong>*</li>
-                    <li>Nascidos em 2007 e anteriores – <strong>12€</strong>*</li>
-                </ul>
-            </li>
-            <li>Mensalidades – <strong>6,50€/mês/1 filho praticanete</strong>; <strong>6,00€/mês/2 ou mais praticantes</strong>**</li>
-            <li>Quota de Sócio – <strong>12€/ano</strong>*</li>
-            <li>Exame médico desportivo – comparticipação de 4€ pelo Clube sendo o restante a cargo dos atletas</li>
-        </ul>
+            <p>* paga no ato da inscrição</p>
+            <p>** pagos até ao último dia de cada mês</p>
+        </section>
 
-        <p align="center">Não é permitida a presença em treinos e competições sem exame médico válido.</p>
+        <section>
+            <h4>ASSINATURAS</h4>
+            <div class="assinaturas-grid">
+                <div>
+                    <strong>O Atleta</strong><br />
+                    <div class="assinatura"></div>
+                </div>
+                <div>
+                    <strong>O Encarregado de Educação</strong><br />
+                    <div class="assinatura"></div>
+                </div>
+                <div>
+                    <strong>O Dirigente</strong><br />
+                    <div class="assinatura"></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <p>* paga no ato da inscrição</p>
-        <p>** pagos até ao dia 30 de cada mês</p>
-    </section>
-
-    <section>
-        <h4>ASSINATURAS</h4>
-        <div class="assinaturas-grid">
-            <div><strong>O Atleta</strong><br /><div class="assinatura"></div></div>
-            <div><strong>O Encarregado de Educação</strong><br /><div class="assinatura"></div></div>
-            <div><strong>O Dirigente</strong><br /><div class="assinatura"></div></div>
-        </div>
-    </section>
-
-    <div class="footer text-center mt-5 small">
+    <footer class="page-footer text-center mt-4 small">
         <p><strong>Corticadas Clube de Atletismo do Alentejo</strong></p>
         <p>corticadasccalentejo@gmail.com</p>
         <p>
-            Cortiçadas de Lavre, @DateTime.Now.ToString("d", CultureInfo.CreateSpecificCulture("pt-PT"))</p>
-    </div>
+            Cortiçadas de Lavre, @DateTime.Now.ToString("d", CultureInfo.CreateSpecificCulture("pt-PT"))
+        </p>
+    </footer>
+</div>
 
-    <div class="text-center mt-4">
-        <button class="btn btn-primary px-4" @onclick="GeneratePDFAsync">Gerar PDF</button>
-    </div>
+<div class="text-center mt-4">
+    <button class="btn btn-primary px-4" @onclick="GeneratePDFAsync">Gerar PDF</button>
 </div>
 
 <style>
-    .form-container {
+    .pdf-page {
         max-width: 900px;
         margin: 0 auto;
+    }
+
+    .form-container {
         background: #fff;
         padding: 2rem;
         border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    }
+
+    .page-header {
+        margin-bottom: 1rem;
     }
 
     h4 {
@@ -192,6 +235,7 @@
         }
     }
 </style>
+
 @code {
     private async Task GeneratePDFAsync()
     {
