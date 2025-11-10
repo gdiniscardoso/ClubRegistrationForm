@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gunthi.Club.Registration.Form", "Gunthi.Club.Registration.Form\Gunthi.Club.Registration.Form.csproj", "{1E73DEDF-72E4-BF43-722F-A56E9E82ECEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gunthi.Club.Registration.Form.AppHost", "Gunthi.Club.Registration.Form.AppHost\Gunthi.Club.Registration.Form.AppHost.csproj", "{E2212D5F-1D3D-4DAE-B06C-10DF5ED52D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gunthi.Club.Registration.Form.ServiceDefaults", "Gunthi.Club.Registration.Form.ServiceDefaults\Gunthi.Club.Registration.Form.ServiceDefaults.csproj", "{9EA648D7-1A7B-8CFA-ECA8-4DA45A023823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gunthi.Club.Registration.Form.Core", "Gunthi.Club.Registration.Form.Core\Gunthi.Club.Registration.Form.Core.csproj", "{2E573CA0-5280-4578-AD20-93EF03F3AB77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.gitattributes = ..\..\.gitattributes
+		..\..\.nojekyll = ..\..\.nojekyll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E73DEDF-72E4-BF43-722F-A56E9E82ECEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E73DEDF-72E4-BF43-722F-A56E9E82ECEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E73DEDF-72E4-BF43-722F-A56E9E82ECEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E73DEDF-72E4-BF43-722F-A56E9E82ECEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2212D5F-1D3D-4DAE-B06C-10DF5ED52D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2212D5F-1D3D-4DAE-B06C-10DF5ED52D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2212D5F-1D3D-4DAE-B06C-10DF5ED52D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2212D5F-1D3D-4DAE-B06C-10DF5ED52D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA648D7-1A7B-8CFA-ECA8-4DA45A023823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA648D7-1A7B-8CFA-ECA8-4DA45A023823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA648D7-1A7B-8CFA-ECA8-4DA45A023823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA648D7-1A7B-8CFA-ECA8-4DA45A023823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E573CA0-5280-4578-AD20-93EF03F3AB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E573CA0-5280-4578-AD20-93EF03F3AB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E573CA0-5280-4578-AD20-93EF03F3AB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E573CA0-5280-4578-AD20-93EF03F3AB77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D191935-30B7-498A-9952-CDBF5DA40337}
+	EndGlobalSection
+EndGlobal
