@@ -1,0 +1,156 @@
+@page "/"
+@using System.Net
+@using System.Text.RegularExpressions
+@inject IHttpClientFactory ClientFactory
+
+<div class="page">
+    <main>
+        <article class="content px-4">
+            <EditForm Model="Model" OnSubmit="GetSearchResults" FormName="SearchForm">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Search</h3>
+                        <span style="float:right">
+                            <InputSelect @bind-Value="dotNetVersion">
+                                <option>aspnetcore-9.0</option>
+                                <option>aspnetcore-8.0</option>
+                                <option>aspnetcore-7.0</option>
+                                <option>aspnetcore-6.0</option>
+                                <option>aspnetcore-5.0</option>
+                                <option>aspnetcore-3.1</option>
+                            </InputSelect>
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <p>Provide a namespace, class, member, or <code>/dotnet/api/...</code> relative link.</p>
+                            <InputText id="searchText" @bind-Value="Model!.SearchText" aria-label="Search Text" onfocus="this.value=''" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="button" class="btn btn-secondary" @onclick="() => ClearUI()">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+
+            @if (isSearching)
+            {
+                <div class="d-flex justify-content-center my-3">
+                    <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+                </div>
+            }
+
+            <ol class="my-3">
+               
+                @foreach (var item in ResultsToRender)
+                {
+                    <ApiResult DisplayName="@item.DisplayName"
+                               Description="@item.Description"
+                               ItemType="@item.ItemType"
+                               Link="@item.Link"
+                               Index="@item.Index" />
+                }
+            </ol>
+
+            <div class="my-3">
+                @message
+            </div>
+        </article>
+    </main>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private FormModel? Model { get; set; } = new();
+
+    private SearchResults? SearchResultItems { get; set; }
+    private List<Result> ResultsToRender { get; set; } = new();
+    public string? message;
+    private string? dotNetVersion;
+
+    private const int MaxResults = 22;
+
+    private bool isSearching = false;
+
+    public async Task GetSearchResults()
+    {
+        isSearching = true;
+        ResultsToRender.Clear();
+        message = string.Empty;
+
+        var apiClient = ClientFactory.CreateClient("APIClient");
+        if (string.IsNullOrEmpty(Model?.SearchText) || apiClient == null)
+        {
+            isSearching = false;
+            return;
+        }
+
+        try
+        {
+            SearchResultItems = await apiClient.GetFromJsonAsync<SearchResults>($"api/apibrowser/dotnet/search?api-version=0.2&search={Model.SearchText}");
+
+            if (SearchResultItems?.Results?.Any() == true)
+            {
+                var index = 1;
+                foreach (var result in SearchResultItems.Results.Take(MaxResults))
+                {
+                    var client = ClientFactory.CreateClient();
+                    var encodedUrl = WebUtility.UrlEncode($"https://learn.microsoft.com/en-us{result.Url}?view={dotNetVersion}");
+                    using var request = new HttpRequestMessage(HttpMethod.Get, $"https://corsproxy.io/?{encodedUrl}");
+                    using var response = await client.SendAsync(request);
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    var match = Regex.Match(content, "<meta name=\"ms.assetid\" content=\"(.+?)\" />");
+                    if (match.Success)
+                    {
+                        result.Link = match.Groups[1].Value.Replace("*", "%2A").Replace("`", "%60");
+                    }
+
+                    result.Index = index++;
+                    ResultsToRender.Add(result);
+                    StateHasChanged();
+                }
+            }
+            else
+            {
+                message = "No results returned.";
+            }
+        }
+        catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.BadRequest)
+        {
+            message = "Bad Request! No results returned.";
+        }
+        finally
+        {
+            isSearching = false;
+        }
+    }
+
+    private void ClearUI()
+    {
+        ResultsToRender.Clear();
+        Model!.SearchText = string.Empty;
+        message = string.Empty;
+    }
+
+    public class FormModel
+    {
+        public string? SearchText { get; set; } = string.Empty;
+    }
+
+    public class SearchResults
+    {
+        public IEnumerable<Result>? Results { get; set; }
+    }
+
+    public class Result
+    {
+        public string? DisplayName { get; set; }
+        public string? Url { get; set; }
+        public string? ItemType { get; set; }
+        public string? Description { get; set; }
+        public string? Link { get; set; }
+        public int Index { get; set; }
+    }
+}
