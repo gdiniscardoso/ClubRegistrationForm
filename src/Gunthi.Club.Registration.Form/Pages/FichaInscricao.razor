@@ -6,12 +6,12 @@
     <header class="page-header text-center">
         <div align="center">
             <img src="logo_CORK_cores.jpg" width="100px" heigth="100px" />
-            <p>NIPC - 513156500</p>
-            <p>Fundado a 10 julho2014</p>
+            <p>NIPC -513156500</p>
+            <p>Fundado a10 julho2014</p>
         </div>
 
         <h2 class="text-center mb-4">FICHA DE INSCRIÇÃO – ÉPOCA DESPORTIVA2025/26</h2>
-        <p class="text-center small text-muted">01 setembro 2025 – 31 agosto 2026</p>
+        <p class="text-center small text-muted">01 setembro2025 –31 agosto2026</p>
     </header>
 
     <main class="form-container">
@@ -105,8 +105,8 @@
                 <li>
                     Taxa de Filiação (para atletas filiados na FPA):
                     <ul>
-                        <li>Nascidos em 2008 e posteriores – <strong>5€</strong>*</li>
-                        <li>Nascidos em 2007 e anteriores – <strong>12€</strong>*</li>
+                        <li>Nascidos em2008 e posteriores – <strong>5€</strong>*</li>
+                        <li>Nascidos em2007 e anteriores – <strong>12€</strong>*</li>
                     </ul>
                 </li>
                 <li>
@@ -169,7 +169,7 @@
         background: #fff;
         padding: 2rem;
         border-radius: 12px;
-        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+        /* box-shadow:02px8px rgba(0,0,0,0.1); */
     }
 
     .page-header {
@@ -184,8 +184,8 @@
 
     .form-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: .8rem 1rem;
+        grid-template-columns: 1fr1fr;
+        gap: .8rem1rem;
         margin-top: 1rem;
     }
 
@@ -215,13 +215,20 @@
         display: flex;
         justify-content: space-between;
         text-align: center;
-        gap: 1rem;
+        gap: 1rem; /* space between columns */
     }
+
+        /* Make each signature column occupy roughly a third of the available width and allow spacing between them */
+        .assinaturas-grid > div {
+            flex: 0 0 32%;
+            box-sizing: border-box;
+        }
 
         .assinaturas-grid .assinatura {
             border-bottom: 1px solid #000;
             margin-top: 1.5rem;
             height: 30px;
+            width: 100%;
         }
 
     ul {
@@ -229,10 +236,20 @@
         margin-left: 2rem;
     }
 
-    @@media (max-width: 700px) {
+    @@media (max-width:700px) {
         .form-grid {
             grid-template-columns: 1fr;
         }
+
+        .assinaturas-grid {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+            .assinaturas-grid > div {
+                flex: none;
+                width: 100%;
+            }
     }
 </style>
 
